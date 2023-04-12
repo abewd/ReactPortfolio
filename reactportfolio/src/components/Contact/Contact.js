@@ -3,6 +3,12 @@ import "./contact.css";
 import "tailwindcss/tailwind.css";
 
 export default function App() {
+  const [email, setEmail] = useState("");
+
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+  };
+
   const [message, setMessage] = useState("");
 
   const handleMessageChange = (e) => {
@@ -11,7 +17,7 @@ export default function App() {
 
   const handleButtonClick = () => {
     const emailBody = encodeURIComponent(message);
-    window.location.href = "mailto:exampleEmail@email.com?body";
+    window.location.href = "mailto:exampleEmail@email.com?body=" + emailBody;
   };
   return (
     <div>
