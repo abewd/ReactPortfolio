@@ -23,7 +23,7 @@ function Portfolio(props) {
     },
   ];
   return (
-    <div>
+    <div className="project-container">
       {Projects.map((item) => {
         return <Project item={item} />;
       })}

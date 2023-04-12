@@ -5,6 +5,17 @@
   width: 200px;
   height: 200px;
   margin: 30px;
+  background-color: red;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+.project-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
 }
 
 /* Add rounded corners to the top left and the top right corner of the image */
