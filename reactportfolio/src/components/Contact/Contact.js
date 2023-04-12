@@ -16,9 +16,19 @@ export default function App() {
   };
 
   const handleButtonClick = () => {
-    const emailBody = encodeURIComponent(message);
-    window.location.href = "mailto:exampleEmail@email.com?body=" + emailBody;
+    if (isValidEmail(email)) {
+      const emailBody = encodeURIComponent(message);
+      window.location.href = "mailto:" + email + "?body=" + emailBody;
+    } else {
+      alert("Please enter a valid email address.");
+    }
   };
+
+  const isValidEmail = (email) => {
+    const regex = /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/;
+    return regex.test(email);
+  };
+
   return (
     <div>
       <section className="text-gray-700 body-font relative">
@@ -59,6 +69,8 @@ export default function App() {
                     id="email"
                     name="email"
                     className="w-full bg-gray-100 rounded border border-gray-300 focus:border-indigo-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                    value={email}
+                    onChange={handleEmailChange}
                   />
                 </div>
               </div>
@@ -84,7 +96,7 @@ export default function App() {
                   className="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg"
                   onClick={handleButtonClick}
                 >
-                  Button
+                  Send
                 </button>
               </div>
               <div className="p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center">
