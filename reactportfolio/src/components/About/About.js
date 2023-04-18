@@ -26,11 +26,7 @@ class About extends Component {
                 strive to improve my skills and keep up with the latest industry
                 trends.
               </p>
-              <div className="mt-4">
-                <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                  Learn More
-                </button>
-              </div>
+              <div className="mt-4"></div>
             </div>
           </div>
         </div>
